@@ -1,0 +1,12 @@
+<p>We've added a profile field for your convenience.</p>
+
+<p>You might use this for personal information about each user.</p>
+
+<p>Backdrop does not include a profile field by default, but you can add as many custom fields to user accounts as you would like. This profile field is just one example. You have a few choices regarding what to do with this field.</p>
+
+<ol>
+	<li>Delete the content and replace it with something that will be useful for you or your site.</li>
+	<li>Delete this field entirely from user accounts if you don't think it is helpful or necessary.</li>
+</ol>
+
+<p>You can add or delete fields from user accounts here:&nbsp;<em>/admin/config/people/manage</em></p>

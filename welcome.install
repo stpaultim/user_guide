@@ -1,0 +1,146 @@
+<?php
+	function welcome_install() {
+		$pages = array(
+	    '001' => array(
+	      'title' => st('User Manual'),
+	      'body' => '001',
+	    ),
+	    '002' => array(
+	      'title' => st('Layouts'),
+	      'body' => '002',
+	    ),
+	    '003' => array(
+	      'title' => st('Admin Menu'),
+	      'body' => '003',
+	    ),
+	    '004' => array(
+	      'title' => st('Content Types'),
+	      'body' => '004',
+	    ),
+	    '005' => array(
+	      'title' => st('Glossary'),
+	      'body' => '005',
+	    ),
+	  );
+
+	  $module_path = backdrop_get_path('module', 'welcome');
+	  $weight = -10;
+
+	  // Create book page for Guidebook
+	  foreach ($pages as $info) {
+	  	$content = file_get_contents($module_path . '/content/' . $info['body'] . '.txt');
+	    $page = new Node(
+	      array(
+	        'title' => $info['title'],
+	        'body' => array(
+	          LANGUAGE_NONE => array(
+	            array(
+	              'value' => $content,
+	              'format' => 'filtered_html',
+	            ),
+	          ),
+	        ),
+	        'uid' => 1,
+	        'status' => 1,
+	        'promote' => 0,	
+	        'type' => 'book',
+	      )
+	    );
+	    $page->save();
+
+			// Create a menu item for guidebook
+	    if ($page->title == 'User Manual') {
+	    	  // Set the bid for our guidebook
+	    		$guidebook_nid = $page->nid;
+	    		$item = array(
+				  'link_title' => st('User Manual'),
+				  'link_path' => 'node/' . $guidebook_nid,
+				  'menu_name' => 'main-menu',
+				  'weight' => 10,
+				);
+				menu_link_save($item);
+	    }
+	    // Add bid to each book page
+	    $page = node_load($page->nid);
+	    $page->book['weight'] = $weight++;
+	    $page->book['bid'] = $guidebook_nid;
+	    node_save($page);
+
+	    dpm($page->title . ' ' . $info['body'] . ' ' . $page->book['weight']);
+	  }
+
+		// Update the menu router information.
+		menu_rebuild();
+
+		$format = filter_format_load('filtered_html');
+		$format->filters['video_filter'] = (object) $FILTER_ARRAY;
+		filter_format_save($format);
+
+		// Make sure filters are in the correct order
+		config_set('filter.format.filtered_html', 'filters.video_filter.status', '1');
+		config_set('filter.format.filtered_html', 'filters.filter_html.settings.allowed_html', '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h3> <h4> <h5> <p> <img> <figure> <figcaption> <table> <thead> <tbody> <tr> <th> <td>');
+		config_set('filter.format.filtered_html', 'filters.filter_html.weight', '-3');
+		config_set('filter.format.filtered_html', 'filters.video_filter.weight', '-2');
+
+		config_set('filter.format.filtered_html', 'filters.filter_url.weight', '-1');
+
+
+		// // Set view permission for all content types
+	  $node_types = node_type_get_types();
+	  foreach ($node_types as $node_type) {
+
+	  	$node_type = $node_type->type;
+
+	  	$temp_permission = st('view any ') . $node_type . st(' content');
+	  	$description = st('Use tags to group posts on similar topics into categories.');
+		  $authenticated_permissions = array(
+		    $temp_permission,
+		  );
+		  user_role_grant_permissions('authenticated', $authenticated_permissions);
+
+		  if ($node_type != 'book') {
+		  	$anonymous_permissions = array(
+		  		$temp_permission,
+		  	);
+		  	user_role_grant_permissions('anonymous', $anonymous_permissions);
+		  }
+	  }
+
+		 // Rebuild permissions
+  	node_access_rebuild();
+
+  	$nodes = node_load_multiple(NULL, array("title" => "About"));
+		$node = current($nodes);
+		$content = file_get_contents($module_path . '/content/about.txt');
+		$node->body[LANGUAGE_NONE][0]['value'] = $content;
+		node_save($node);
+
+  	$nodes = node_load_multiple(NULL, array("title" => "Your first post!"));
+		$node = current($nodes);
+		$content = file_get_contents($module_path . '/content/post.txt');
+		$node->body[LANGUAGE_NONE][0]['value'] = $content;
+		node_save($node);
+
+		$field_image_dir = 'public://hero';
+  	file_prepare_directory($field_image_dir, FILE_CREATE_DIRECTORY);
+  	$image_url = BACKDROP_ROOT . '/' . $module_path . '/images/french-mountains.jpg';
+  	$moved_file = file_unmanaged_copy($image_url, $field_image_dir);
+
+  	$file = entity_create('file', array(
+      'filename' => 'french-mountains.jpg',
+      'uri' => $moved_file,
+      'uid' => 1,
+    ));
+
+    $file->save();
+
+    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.image_path', '/files/hero/french-mountains.jpg');
+    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.title', 'Getting Started with Backdrop');
+
+    $user_account = user_load('1');
+    $content = file_get_contents($module_path . '/content/user.txt');
+    $user_account->field_profile[LANGUAGE_NONE][0]['value'] = $content;
+    $user_account->field_profile[LANGUAGE_NONE][0]['format'] = 'filtered_html';
+    user_save($user_account);
+
+	}

@@ -1,0 +1,12 @@
+type = module
+name = Welcome Module
+description = Welcome to Backdrop, some content and configuration to help you get started.
+package = Recipes
+backdrop = 1.x
+
+dependencies[] = system (>=1.20.0)
+dependencies[] = book
+dependencies[] = video_filter
+dependencies[] = content_view_access
+
+stylesheets[all][] = css/welcome.css	

@@ -1,0 +1,2 @@
+<p>This is a page.</p>
+<p>A <em>Page</em> is a type of content used for information that rarely changes. The "About us" section of a website is often made up of Pages. A page is almost always placed into a menu for easy access. Unlike a Post, a default Page will not be featured on the site's initial home page, does not allow comments, and will not display the created date and the name of the person who created it.</p>

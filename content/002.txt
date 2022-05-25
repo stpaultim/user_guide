@@ -1,0 +1,18 @@
+<h3>Welcome to Backdrop CMS.</h3>
+
+<p>This guidebook is provided by the Welcome module and is designed to help you get started with Backdrop CMS. You can also use this guidebook to create your own help pages to remind yourself or future users how to use this site.&nbsp;</p>
+
+<p>As a site administor, there are our top three tips to help you get started.&nbsp;</p>
+
+<ol>
+	<li>Be sure to <strong>checkout the Dashboard</strong> in the admin menu. It's a good place to find many of the things that you will need to access most often.&nbsp;</li>
+	<li>Take some time to <strong>familiarize yourself with the layout system in Backdrop</strong>. It's a powerful tool, but takes a little time to get used to.&nbsp;</li>
+	<li>Please, <strong>take advantage of the backdrop CMS community as a resource</strong>. We have a number of volunteers that are willing to help you get started.
+	<ul>
+		<li><strong>The Backdrop Forum</strong> -&nbsp;https://forum.backdropcms.org/</li>
+		<li><strong>Our chat forum in Zulip</strong> -&nbsp;https://backdrop.zulipchat.com/</li>
+	</ul>
+	</li>
+</ol>
+<br>
+[video:https://www.youtube.com/embed/79IeUJRZBxQ]
