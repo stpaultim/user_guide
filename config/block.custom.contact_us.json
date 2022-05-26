@@ -1,0 +1,12 @@
+{
+    "_config_name": "block.custom.contact_us",
+    "delta": "contact_us",
+    "info": "Contact Us",
+    "title": "",
+    "description": "Contact Us",
+    "body": {
+        "value": "<p><strong>Backdrop User Manual</strong><br />\r\n2233 Universal Drive<br />\r\nCityVille, StateRegion 44554-0090<br />\r\nEdit this block here:&nbsp;<em>/admin/structure/block</em></p>\r\n\r\n<p>800-800-0088</p>\r\n",
+        "format": "filtered_html"
+    },
+    "default_langcode": "und"
+}

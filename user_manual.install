@@ -1,32 +1,55 @@
 <?php
-	function welcome_install() {
+	function user_manual_install() {
 		$pages = array(
 	    '001' => array(
 	      'title' => st('User Manual'),
 	      'body' => '001',
+	      'type' => 'book',
+	      'promote' => '0',
 	    ),
 	    '002' => array(
 	      'title' => st('Layouts'),
 	      'body' => '002',
+	      'type' => 'book',
+	      'promote' => '0',
 	    ),
 	    '003' => array(
 	      'title' => st('Admin Menu'),
 	      'body' => '003',
+	      'type' => 'book',
+	      'promote' => '0',
 	    ),
 	    '004' => array(
 	      'title' => st('Content Types'),
 	      'body' => '004',
+	      'type' => 'book',
+	      'promote' => '0',
 	    ),
 	    '005' => array(
 	      'title' => st('Glossary'),
 	      'body' => '005',
+	      'type' => 'book',
+	      'promote' => '0',
+	    ),
+	    '006' => array(
+	      'title' => st('Promoted Content'),
+	      'body' => '006',
+	      'type' => 'post',
+	      'promote' => '1',
+	    ),
+	    '007' => array(
+	      'title' => st('Post that was not promoted'),
+	      'body' => '007',
+	      'type' => 'post',
+	      'promote' => '0',
 	    ),
 	  );
 
-	  $module_path = backdrop_get_path('module', 'welcome');
+	  $module_path = backdrop_get_path('module', 'user_manual');
 	  $weight = -10;
+	  $created = time() - '1036800';
 
-	  // Create book page for Guidebook
+	  // Create book page for User Manual
 	  foreach ($pages as $info) {
 	  	$content = file_get_contents($module_path . '/content/' . $info['body'] . '.txt');
 	    $page = new Node(
@@ -41,32 +64,38 @@
 	          ),
 	        ),
 	        'uid' => 1,
+	        'promote' => $info['promote'],
 	        'status' => 1,
-	        'promote' => 0,	
-	        'type' => 'book',
+	        'type' => $info['type'],
+	        'created' => $created,
+	        'changed' => $created,
 	      )
 	    );
 	    $page->save();
 
-			// Create a menu item for guidebook
+	    $created = $created - '1003121';
+
+			// Create a menu item for User Manual
 	    if ($page->title == 'User Manual') {
-	    	  // Set the bid for our guidebook
-	    		$guidebook_nid = $page->nid;
+	    	  // Set the bid for our User Manual
+	    		$user_manual_nid = $page->nid;
 	    		$item = array(
 				  'link_title' => st('User Manual'),
-				  'link_path' => 'node/' . $guidebook_nid,
+				  'link_path' => 'node/' . $user_manual_nid,
 				  'menu_name' => 'main-menu',
 				  'weight' => 10,
 				);
 				menu_link_save($item);
 	    }
 	    // Add bid to each book page
-	    $page = node_load($page->nid);
-	    $page->book['weight'] = $weight++;
-	    $page->book['bid'] = $guidebook_nid;
-	    node_save($page);
-
-	    dpm($page->title . ' ' . $info['body'] . ' ' . $page->book['weight']);
+	    if ($info['type'] == 'book') {
+	    	dpm($page->title);
+				dpm($info['type']);
+		    $page = node_load($page->nid);
+		    $page->book['weight'] = $weight++;
+		    $page->book['bid'] = $user_manual_nid;
+		    node_save($page);
+	    }
 	  }
 
 		// Update the menu router information.
@@ -113,29 +142,32 @@
 		$node = current($nodes);
 		$content = file_get_contents($module_path . '/content/about.txt');
 		$node->body[LANGUAGE_NONE][0]['value'] = $content;
+		$node->created = time() - '2150000';
 		node_save($node);
 
   	$nodes = node_load_multiple(NULL, array("title" => "Your first post!"));
 		$node = current($nodes);
 		$content = file_get_contents($module_path . '/content/post.txt');
 		$node->body[LANGUAGE_NONE][0]['value'] = $content;
+		$node->created = time() - '2600000';
 		node_save($node);
 
 		$field_image_dir = 'public://hero';
   	file_prepare_directory($field_image_dir, FILE_CREATE_DIRECTORY);
-  	$image_url = BACKDROP_ROOT . '/' . $module_path . '/images/french-mountains.jpg';
+  	$image_url = BACKDROP_ROOT . '/' . $module_path . '/images/mountain-shadows.jpg';
   	$moved_file = file_unmanaged_copy($image_url, $field_image_dir);
 
   	$file = entity_create('file', array(
-      'filename' => 'french-mountains.jpg',
+      'filename' => 'mountain-shadows.jpg',
       'uri' => $moved_file,
       'uid' => 1,
     ));
 
     $file->save();
 
-    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.image_path', '/files/hero/french-mountains.jpg');
-    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.title', 'Getting Started with Backdrop');
+
+
+    // config_set('layout.layout.home', 'content.5b00c15f-41e3-4454-a35a-9049b93a468d.plugin', 'mini_layouts:footer');
 
     $user_account = user_load('1');
     $content = file_get_contents($module_path . '/content/user.txt');
@@ -143,4 +175,58 @@
     $user_account->field_profile[LANGUAGE_NONE][0]['format'] = 'filtered_html';
     user_save($user_account);
 
+    $uuid1 = '57deb90a-f136-49af-af00-c5e14ec6b8c5';
+	  $block1 = array(
+	    'content.' . $uuid1 => array(
+	      'plugin' => 'mini_layouts:footer',
+	      'data' => array(
+	        'module' => 'mini_layouts',
+	        'delta' => 'footer',
+	        'settings' => array(
+	          'title_display' => 'default',
+	          'title' => '',
+	          'style' => 'default',
+	          'block_settings' => [],
+	          'contexts' => [],
+	        ),
+	        'uuid' => $uuid1,
+	        'style' => array(
+	          'plugin' => 'default',
+	          'data' => array(
+	            'settings' => array(
+	              'classes' => '',
+	            ),
+	          ),
+	        ),
+	      ),
+	    ),
+	  );
+	  config_set_multiple('layout.layout.home', $block1 );
+	  config_set_multiple('layout.layout.default', $block1 );
+	  config_set_multiple('layout.layout.user_manual', $block1 );
+	  config_set('layout.layout.home','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', '57deb90a-f136-49af-af00-c5e14ec6b8c5'));
+    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.image_path', '/files/hero/mountain-shadows.jpg');
+    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.title', 'Getting Started with Backdrop');
+
+	  config_set('layout.layout.default','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', '57deb90a-f136-49af-af00-c5e14ec6b8c5'));
+	  config_set('layout.layout.user_manual','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', '57deb90a-f136-49af-af00-c5e14ec6b8c5'));
+
+	  // $created = time() - 1036800;
+
+	  // $node = node_load('1');
+	  // $node->created = '1586334386';
+	  // $node->changed = '1586334386';
+	  // field_attach_update('node', $node);
+
+	  // $node->title = 'First Post Proppy';
+	  // field_attach_update('node', $node);
+
+	  // $node = node_load('2');
+	  // $node->created = 1586334386;
+	  // $node->changed = 1586334386;
+	  // field_attach_update('node', $node);
+
+
+
 	}
+

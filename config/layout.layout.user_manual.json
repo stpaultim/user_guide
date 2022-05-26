@@ -1,8 +1,8 @@
 {
-    "_config_name": "layout.layout.guidebook",
+    "_config_name": "layout.layout.user_manual",
     "path": "node/%",
-    "name": "guidebook",
-    "title": "Guidebook",
+    "name": "user_manual",
+    "title": "User Manual",
     "description": null,
     "renderer_name": "standard",
     "module": null,

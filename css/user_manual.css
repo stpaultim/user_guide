@@ -1,0 +1,19 @@
+.l-top .block-hero {
+  min-height: 45vh;
+}
+
+.l-top .block-hero .block-title {
+
+  text-shadow: 2px 2px 5px white;
+}
+
+footer.l-footer {
+  background-color:  #F2F2F2;
+  line-height: 1.8;
+}
+
+.l-footer table td {
+  border-color: transparent;
+  border-width: 0;
+  padding: 0 .3em .5em 0;
+}

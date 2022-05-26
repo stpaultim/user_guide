@@ -1,0 +1,6 @@
+<p>This is a post, but this post will not show up on the front page view of promoted content, because this post was not promoted (someone 'unchecked' the promoted content option).</p>
+
+<p>This post will still show up in the recent content block found in the footer, because that view is showing all posts and pages regardless of whether or not they have been promoted.&nbsp;</p>
+
+<p>Path to edit Promoted Content view:&nbsp;<em>/admin/structure/views/view/promoted</em><br />
+Path to edit Recent Content view:&nbsp;<em>/admin/structure/views/view/recent_content</em></p>
