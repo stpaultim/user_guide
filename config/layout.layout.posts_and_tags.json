@@ -1,13 +1,13 @@
 {
-    "_config_name": "layout.layout.default",
-    "path": null,
-    "name": "default",
-    "title": "Default Layout",
+    "_config_name": "layout.layout.posts_and_tags",
+    "path": "node/%",
+    "name": "posts_and_tags",
+    "title": "Posts and Tags",
     "description": null,
     "renderer_name": "standard",
-    "module": "layout",
+    "module": null,
     "weight": 0,
-    "storage": 2,
+    "storage": 1,
     "layout_template": "moscone_flipped",
     "disabled": false,
     "settings": {
@@ -17,29 +17,27 @@
     },
     "positions": {
         "header": [
-            "84c43df4-1165-4faf-8700-c362a7153c0b",
-            "13b2f325-af26-40bb-8c61-97fe1d93f19f"
+            "34807e20-f399-45a6-bb00-e68d1806a707",
+            "9605726c-49db-416c-af09-9d7f317c1e46"
         ],
         "top": [
-            "09f11b4e-877e-45ab-9000-a4c6254faa04",
-            "a549d0bc-51f7-46b0-9b41-653788410dd4"
+            "b47362f1-71b1-4ad1-8f00-bdb64d175782",
+            "15bc12ad-7ecc-488c-8200-d5b02bc58f24"
         ],
         "content": [
-            "default"
+            "875ac4cc-5461-45d4-a300-c86a19c08fd8"
         ],
         "sidebar": [
-            "75662cd9-6d27-44b1-8603-03e1345a8a75"
+            "94b9dc0a-f844-4141-9200-c15f55c5b42c"
         ],
-        "bottom": [],
         "footer": [
-            "57deb90a-f136-49af-af00-c5e14ec6b8c5"
-        ],
-        "title": []
+            "a799baee-3541-4ee8-9918-24733689301a"
+        ]
     },
     "contexts": [],
     "relationships": [],
     "content": {
-        "84c43df4-1165-4faf-8700-c362a7153c0b": {
+        "34807e20-f399-45a6-bb00-e68d1806a707": {
             "plugin": "system:header",
             "data": {
                 "status": 1,
@@ -57,7 +55,7 @@
                     },
                     "contexts": []
                 },
-                "uuid": "84c43df4-1165-4faf-8700-c362a7153c0b",
+                "uuid": "34807e20-f399-45a6-bb00-e68d1806a707",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -68,7 +66,7 @@
                 }
             }
         },
-        "13b2f325-af26-40bb-8c61-97fe1d93f19f": {
+        "9605726c-49db-416c-af09-9d7f317c1e46": {
             "plugin": "system:main-menu",
             "data": {
                 "status": 1,
@@ -85,7 +83,7 @@
                     },
                     "contexts": []
                 },
-                "uuid": "13b2f325-af26-40bb-8c61-97fe1d93f19f",
+                "uuid": "9605726c-49db-416c-af09-9d7f317c1e46",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -96,7 +94,7 @@
                 }
             }
         },
-        "09f11b4e-877e-45ab-9000-a4c6254faa04": {
+        "b47362f1-71b1-4ad1-8f00-bdb64d175782": {
             "plugin": "system:breadcrumb",
             "data": {
                 "status": 1,
@@ -109,7 +107,7 @@
                     "block_settings": [],
                     "contexts": []
                 },
-                "uuid": "09f11b4e-877e-45ab-9000-a4c6254faa04",
+                "uuid": "b47362f1-71b1-4ad1-8f00-bdb64d175782",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -120,7 +118,7 @@
                 }
             }
         },
-        "a549d0bc-51f7-46b0-9b41-653788410dd4": {
+        "15bc12ad-7ecc-488c-8200-d5b02bc58f24": {
             "plugin": "system:page_components:title_combo",
             "data": {
                 "status": 1,
@@ -137,7 +135,7 @@
                     "tab-type": "both",
                     "tab_type": "both"
                 },
-                "uuid": "a549d0bc-51f7-46b0-9b41-653788410dd4",
+                "uuid": "15bc12ad-7ecc-488c-8200-d5b02bc58f24",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -148,7 +146,7 @@
                 }
             }
         },
-        "default": {
+        "875ac4cc-5461-45d4-a300-c86a19c08fd8": {
             "plugin": "system:main",
             "data": {
                 "status": 1,
@@ -161,7 +159,7 @@
                     "block_settings": [],
                     "contexts": []
                 },
-                "uuid": "default",
+                "uuid": "875ac4cc-5461-45d4-a300-c86a19c08fd8",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -172,7 +170,7 @@
                 }
             }
         },
-        "75662cd9-6d27-44b1-8603-03e1345a8a75": {
+        "94b9dc0a-f844-4141-9200-c15f55c5b42c": {
             "plugin": "views:tags-block",
             "data": {
                 "status": 1,
@@ -198,7 +196,7 @@
                     "admin_label": "",
                     "admin_description": ""
                 },
-                "uuid": "75662cd9-6d27-44b1-8603-03e1345a8a75",
+                "uuid": "94b9dc0a-f844-4141-9200-c15f55c5b42c",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -213,7 +211,7 @@
                         "data": {
                             "settings": {
                                 "visibility_setting": "1",
-                                "paths": "news\r\nposts/*\r\ntags/*",
+                                "paths": "news\r\nposts/*",
                                 "load_condition_nojs": "Load condition"
                             }
                         }
@@ -221,7 +219,7 @@
                 ]
             }
         },
-        "57deb90a-f136-49af-af00-c5e14ec6b8c5": {
+        "a799baee-3541-4ee8-9918-24733689301a": {
             "plugin": "mini_layouts:footer",
             "data": {
                 "status": 1,
@@ -234,7 +232,7 @@
                     "block_settings": [],
                     "contexts": []
                 },
-                "uuid": "57deb90a-f136-49af-af00-c5e14ec6b8c5",
+                "uuid": "a799baee-3541-4ee8-9918-24733689301a",
                 "style": {
                     "plugin": "default",
                     "data": {
@@ -245,5 +243,17 @@
                 }
             }
         }
-    }
+    },
+    "conditions": [
+        {
+            "plugin": "path",
+            "data": {
+                "settings": {
+                    "visibility_setting": "1",
+                    "paths": "news\r\nposts/*\r\ntags/*",
+                    "load_condition_nojs": "Load condition"
+                }
+            }
+        }
+    ]
 }

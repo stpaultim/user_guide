@@ -225,6 +225,131 @@
 	      ),
 	    ),
 	  );
+
+
+    // array (
+    //   'plugin' => 'views:tags-block',
+    //   'data' => 
+    //   array (
+    //     'status' => 1,
+    //     'module' => 'views',
+    //     'delta' => 'tags-block',
+    //     'settings' => 
+    //     array (
+    //       'link_to_view' => 0,
+    //       'more_link' => false,
+    //       'use_pager' => false,
+    //       'pager_id' => 0,
+    //       'items_per_page' => 10,
+    //       'offset' => 0,
+    //       'path' => NULL,
+    //       'fields_override' => NULL,
+    //       'title_display' => 'default',
+    //       'title' => '',
+    //       'style' => 'default',
+    //       'block_settings' => 
+    //       array (
+    //       ),
+    //       'contexts' => 
+    //       array (
+    //       ),
+    //       'allowed' => 
+    //       array (
+    //       ),
+    //       'path_override' => false,
+    //       'exposed' => 
+    //       array (
+    //       ),
+    //       'admin_label' => '',
+    //       'admin_description' => '',
+    //     ),
+    //     'uuid' => '961a652e-9330-4581-b721-3304e940d92f',
+    //     'style' => 
+    //     array (
+    //       'plugin' => 'default',
+    //       'data' => 
+    //       array (
+    //         'settings' => 
+    //         array (
+    //           'classes' => '',
+    //         ),
+    //       ),
+    //     ),
+    //     'conditions' => 
+    //     array (
+    //       0 => 
+    //       array (
+    //         'plugin' => 'path',
+    //         'data' => 
+    //         array (
+    //           'settings' => 
+    //           array (
+    //             'visibility_setting' => '1',
+    //             'paths' => 'news
+				// 						tags/*
+				// 							posts/*',
+    //             'load_condition_nojs' => 'Load condition',
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   ),
+    // )
+
+
+   //  $uuid2 = 'c810ba75-3518-47b8-8b00-b6c06838c7be';
+	  // $block2 = array(
+	  //   'content.' . $uuid2 => array(
+   //      'plugin' => 'views:tags-block',
+   //      'data' => array(
+   //        'status' => 1,
+   //        'module' => 'views',
+   //        'delta' => 'tags-block',
+   //        'settings' => array(
+   //          'link_to_view' => 0,
+   //          'more_link' => false,
+   //          'use_pager' => false,
+   //          'pager_id' => 0,
+   //          'items_per_page' => 10,
+   //          'offset' => 0,
+   //          'path' => null,
+   //          'fields_override' => null,
+   //          'title_display' => 'default',
+   //          'title' => '',
+   //          'style' => 'default',
+   //          'block_settings' => [],
+   //          'contexts' => [],
+   //          'allowed' => [],
+   //          'path_override' => false,
+   //          'exposed' => [],
+   //          'admin_label' => '',
+   //          'admin_description' => '',
+   //        ),
+   //        'uuid' => $uuid2,
+   //        'style' => array(
+   //          'plugin' => 'default',
+   //          'data' => array(
+   //          	'settings' => array(
+   //              'classes' => '',
+   //            ),
+   //          ),
+   //        ),
+   //        'conditions' => array(
+   //        	'0' => array(
+	  //           'plugin' => 'path',
+	  //           'data' => array(
+	  //             'settings' => array(
+	  //               'visibility_setting' => '1',
+	  //               'paths' => 'news\r\nposts/*\r\ntags/*',
+	  //               'load_condition_nojs' => 'Load condition',
+	  //             ),
+	  //           ),
+	  //         ),
+   //        ),
+   //      ),
+   //    ),
+   //  );
+
 	  config_set_multiple('layout.layout.home', $block1 );
 	  config_set_multiple('layout.layout.default', $block1 );
 	  config_set_multiple('layout.layout.user_manual', $block1 );
@@ -253,4 +378,55 @@
 
 
 	}
+
+
+        // "961a652e-9330-4581-b721-3304e940d92f": {
+        //     "plugin": "views:tags-block",
+        //     "data": {
+        //         "status": 1,
+        //         "module": "views",
+        //         "delta": "tags-block",
+        //         "settings": {
+        //             "link_to_view": 0,
+        //             "more_link": false,
+        //             "use_pager": false,
+        //             "pager_id": 0,
+        //             "items_per_page": 10,
+        //             "offset": 0,
+        //             "path": null,
+        //             "fields_override": null,
+        //             "title_display": "default",
+        //             "title": "",
+        //             "style": "default",
+        //             "block_settings": [],
+        //             "contexts": [],
+        //             "allowed": [],
+        //             "path_override": false,
+        //             "exposed": [],
+        //             "admin_label": "",
+        //             "admin_description": ""
+        //         },
+        //         "uuid": "961a652e-9330-4581-b721-3304e940d92f",
+        //         "style": {
+        //             "plugin": "default",
+        //             "data": {
+        //                 "settings": {
+        //                     "classes": ""
+        //                 }
+        //             }
+        //         },
+        //         "conditions": [
+        //             {
+        //                 "plugin": "path",
+        //                 "data": {
+        //                     "settings": {
+        //                         "visibility_setting": "1",
+        //                         "paths": "news\r\ntags/*\r\nposts/*",
+        //                         "load_condition_nojs": "Load condition"
+        //                     }
+        //                 }
+        //             }
+        //         ]
+        //     }
+        // },
 
