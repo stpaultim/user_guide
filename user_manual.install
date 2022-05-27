@@ -6,48 +6,65 @@
 	      'body' => '001',
 	      'type' => 'book',
 	      'promote' => '0',
+	      'tags' => '',
 	    ),
 	    '002' => array(
 	      'title' => st('Layouts'),
 	      'body' => '002',
 	      'type' => 'book',
 	      'promote' => '0',
+	      'tags' => '',
 	    ),
 	    '003' => array(
 	      'title' => st('Admin Menu'),
 	      'body' => '003',
 	      'type' => 'book',
 	      'promote' => '0',
+	      'tags' => '',
 	    ),
 	    '004' => array(
 	      'title' => st('Content Types'),
 	      'body' => '004',
 	      'type' => 'book',
 	      'promote' => '0',
+	      'tags' => 'fry',
 	    ),
 	    '005' => array(
 	      'title' => st('Glossary'),
 	      'body' => '005',
 	      'type' => 'book',
 	      'promote' => '0',
+	      'tags' => 'fish',
 	    ),
 	    '006' => array(
 	      'title' => st('Promoted Content'),
 	      'body' => '006',
 	      'type' => 'post',
 	      'promote' => '1',
+	      'tags' => 'Post promotion',
 	    ),
 	    '007' => array(
 	      'title' => st('Post that was not promoted'),
 	      'body' => '007',
 	      'type' => 'post',
 	      'promote' => '0',
+	      'tags' => 'Post promotion',
 	    ),
 	  );
 
 	  $module_path = backdrop_get_path('module', 'user_manual');
 	  $weight = -10;
 	  $created = time() - '1036800';
+
+	  foreach (array_unique(array_column($pages, 'tags')) as $tag) {
+	  	if ($tag != '') {
+		    $term = entity_create('taxonomy_term', array(
+		      'name' => $tag,
+		      'vocabulary' => 'tags',
+		    ));
+		    taxonomy_term_save($term);
+	  	}
+	  }
 
 	  // Create book page for User Manual
 	  foreach ($pages as $info) {
@@ -71,6 +88,15 @@
 	        'changed' => $created,
 	      )
 	    );
+
+
+	    dpm($info['tags']);
+	    $classes = taxonomy_term_load_multiple_by_name($info['tags'], 'tags');
+	    dpm($classes);
+    	$class = array_shift($classes);
+    	dpm($page);
+			$page->field_tags['und'][0][tid] = $class->tid;
+
 	    $page->save();
 
 	    $created = $created - '1003121';
@@ -89,8 +115,6 @@
 	    }
 	    // Add bid to each book page
 	    if ($info['type'] == 'book') {
-	    	dpm($page->title);
-				dpm($info['type']);
 		    $page = node_load($page->nid);
 		    $page->book['weight'] = $weight++;
 		    $page->book['bid'] = $user_manual_nid;

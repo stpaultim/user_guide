@@ -1,0 +1,131 @@
+{
+    "_config_name": "views.view.news",
+    "name": "news",
+    "description": "",
+    "tag": "default",
+    "disabled": false,
+    "base_table": "node",
+    "human_name": "News",
+    "core": "1.23.x-dev",
+    "display": {
+        "default": {
+            "display_title": "Master",
+            "display_plugin": "default",
+            "display_options": {
+                "query": {
+                    "type": "views_query",
+                    "options": []
+                },
+                "access": {
+                    "type": "perm",
+                    "perm": "access content"
+                },
+                "cache": {
+                    "type": "none"
+                },
+                "exposed_form": {
+                    "type": "basic"
+                },
+                "pager": {
+                    "type": "full",
+                    "options": {
+                        "items_per_page": "10"
+                    }
+                },
+                "style_plugin": "default",
+                "row_plugin": "node",
+                "fields": {
+                    "title": {
+                        "id": "title",
+                        "table": "node",
+                        "field": "title",
+                        "label": "",
+                        "alter": {
+                            "alter_text": 0,
+                            "make_link": 0,
+                            "absolute": 0,
+                            "trim": 0,
+                            "word_boundary": 0,
+                            "ellipsis": 0,
+                            "strip_tags": 0,
+                            "html": 0
+                        },
+                        "hide_empty": 0,
+                        "empty_zero": 0,
+                        "link_to_node": 1
+                    }
+                },
+                "filters": {
+                    "status": {
+                        "value": 1,
+                        "table": "node",
+                        "field": "status",
+                        "id": "status",
+                        "expose": {
+                            "operator": false
+                        },
+                        "group": 1
+                    },
+                    "type": {
+                        "id": "type",
+                        "table": "node",
+                        "field": "type",
+                        "value": {
+                            "post": "post"
+                        }
+                    }
+                },
+                "sorts": {
+                    "created": {
+                        "id": "created",
+                        "table": "node",
+                        "field": "created",
+                        "order": "DESC"
+                    }
+                },
+                "title": "News",
+                "row_options": {
+                    "build_mode": "teaser",
+                    "title": true,
+                    "links": true,
+                    "comments": false
+                },
+                "header": {
+                    "area": {
+                        "id": "area",
+                        "table": "views",
+                        "field": "area",
+                        "relationship": "none",
+                        "group_type": "group",
+                        "ui_name": "",
+                        "label": "",
+                        "empty": 0,
+                        "content": "<p>This is a list of all posts whether they have been promoted or not, sorted by date published. This page is a view that shows 5 posts per page. A pager will appear, once you have reached 6 posts.</p>\r\n\r\n<p>Some things you can do with views:</p>\r\n\r\n<ul>\r\n\t<li>Build dynamic displays of your content.\r\n\t<ul>\r\n\t\t<li>A display of all content by a particular author.</li>\r\n\t\t<li>A display of all published content.</li>\r\n\t\t<li>A display of all events (if you have an event content type with a date field) in March of next year.</li>\r\n\t</ul>\r\n\t</li>\r\n</ul>\r\n\r\n<p>(This block of text can be edited in the \"header\" section of this view - <em>/admin/structure/views/view/news/configure/page</em>.)</p>\r\n",
+                        "format": "filtered_html",
+                        "tokenize": 0
+                    }
+                }
+            }
+        },
+        "page": {
+            "display_title": "Page",
+            "display_plugin": "page",
+            "display_options": {
+                "query": {
+                    "type": "views_query",
+                    "options": []
+                },
+                "path": "news",
+                "menu": {
+                    "type": "normal",
+                    "title": "News",
+                    "description": "",
+                    "name": "main-menu",
+                    "weight": "0",
+                    "context": 0,
+                    "context_only_inline": 0
+                }
+            }
+        }
+    }
+}

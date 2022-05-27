@@ -1,6 +1,6 @@
 <p>This is a post.</p>
 
-<p>Displayed as part of a <em>view</em> of "promoted content" on the front page.</p>
+<p>This post is displayed as part of a <em>view</em> of "promoted content" on the front page.</p>
 
 <p>You can decide which types of content are able to be promoted and then decide which individual pieces of content you wish to promote. At this time, Posts are promoted by default, but you can change that setting in the Publishing settings on configuration page for each content type (<em>/admin/structure/types/manage/post</em>).</p>
 
