@@ -17,7 +17,9 @@
         "title_block": null
     },
     "positions": {
-        "a126c3a8-4ff5-4945-ab00-c464ef0c7140--0": [],
+        "a126c3a8-4ff5-4945-ab00-c464ef0c7140--0": [
+            "eed84a1e-8981-40ef-9706-6c4bd47c69a9"
+        ],
         "ca9e2cc8-eae9-46b7-bf37-559e666b5081--0": [
             "9cbb8d23-50c2-419b-a334-523f8f3378ab"
         ],
@@ -32,6 +34,34 @@
     "contexts": [],
     "relationships": [],
     "content": {
+        "eed84a1e-8981-40ef-9706-6c4bd47c69a9": {
+            "plugin": "layout:custom_block",
+            "data": {
+                "status": 1,
+                "module": "layout",
+                "delta": "custom_block",
+                "settings": {
+                    "title_display": "default",
+                    "title": "",
+                    "style": "default",
+                    "block_settings": [],
+                    "contexts": [],
+                    "content": "<p><em>This website has been populated with sample content that will help better evaluate Backdrop CMS and see what you can do.&nbsp;</em></p>\r\n",
+                    "format": "filtered_html",
+                    "admin_label": "A message for the footer.",
+                    "admin_description": ""
+                },
+                "uuid": "eed84a1e-8981-40ef-9706-6c4bd47c69a9",
+                "style": {
+                    "plugin": "default",
+                    "data": {
+                        "settings": {
+                            "classes": ""
+                        }
+                    }
+                }
+            }
+        },
         "9cbb8d23-50c2-419b-a334-523f8f3378ab": {
             "plugin": "block:contact_us",
             "data": {

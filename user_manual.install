@@ -1,72 +1,227 @@
 <?php
+
 	function user_manual_install() {
+		
 		$pages = array(
 	    '001' => array(
 	      'title' => st('User Manual'),
 	      'body' => '001',
 	      'type' => 'book',
+	      'has_children' => '1',
+	      'depth' => '1',
 	      'promote' => '0',
-	      'tags' => '',
+	      'menu_item' => 'node/'
 	    ),
-	    '002' => array(
-	      'title' => st('Layouts'),
-	      'body' => '002',
+	    '101' => array(
+	      'title' => st('Guide to this site'),
+	      'body' => '101',
 	      'type' => 'book',
+	      'has_children' => '1',
+	      'depth' => '2',
 	      'promote' => '0',
-	      'tags' => '',
 	    ),
-	    '003' => array(
-	      'title' => st('Admin Menu'),
-	      'body' => '003',
+	    '102' => array(
+	      'title' => st('Goals and Objectives'),
+	      'body' => '102',
 	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
 	      'promote' => '0',
-	      'tags' => '',
 	    ),
-	    '004' => array(
+	    '103' => array(
+	      'title' => st('Our Content Types'),
+	      'body' => '103',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '104' => array(
+	      'title' => st('Our Theme'),
+	      'body' => '104',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '105' => array(
+	      'title' => st('Custom Modules'),
+	      'body' => '105',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '200' => array(
+	      'title' => st('Backdrop CMS'),
+	      'body' => '201',
+	      'type' => 'book',
+	      'has_children' => '1',
+	      'depth' => '2',
+	      'promote' => '0',
+	    ),
+	    '201' => array(
 	      'title' => st('Content Types'),
-	      'body' => '004',
+	      'body' => '201',
 	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
 	      'promote' => '0',
-	      'tags' => 'fry',
 	    ),
-	    '005' => array(
+	    '202' => array(
+	      'title' => st('Taxonomy'),
+	      'body' => '202',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '203' => array(
+	      'title' => st('Users'),
+	      'body' => '203',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '204' => array(
+	      'title' => st('Files'),
+	      'body' => '204',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '205' => array(
+	      'title' => st('Layouts'),
+	      'body' => '205',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '206' => array(
+	      'title' => st('Blocks'),
+	      'body' => '206',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '207' => array(
+	      'title' => st('Views'),
+	      'body' => '207',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	      'tags' => array(''),
+	    ),
+	    '208' => array(
+	      'title' => st('Modules and Themes'),
+	      'body' => '208',
+	      'type' => 'book',
+	      'has_children' => '0',
+	      'depth' => '3',
+	      'promote' => '0',
+	    ),
+	    '301' => array(
 	      'title' => st('Glossary'),
-	      'body' => '005',
+	      'has_children' => '0',
+	      'body' => '301',
 	      'type' => 'book',
+	      'depth' => '2',
 	      'promote' => '0',
-	      'tags' => 'fish',
 	    ),
-	    '006' => array(
+	    '501' => array(
 	      'title' => st('Promoted Content'),
-	      'body' => '006',
+	      'body' => '501',
 	      'type' => 'post',
 	      'promote' => '1',
-	      'tags' => 'Post promotion',
+	      'tags' => array('Promoted Content','Help'),
 	    ),
-	    '007' => array(
+	    '502' => array(
 	      'title' => st('Post that was not promoted'),
-	      'body' => '007',
+	      'body' => '502',
 	      'type' => 'post',
 	      'promote' => '0',
-	      'tags' => 'Post promotion',
+	      'tags' => array('Promoted Content'),
+	    ),
+	    '503' => array(
+	      'title' => st('Backdrop LIVE'),
+	      'body' => '503',
+	      'type' => 'post',
+	      'promote' => '1',
+	      'tags' => array('Community'),
+	    ),
+	    '504' => array(
+	      'title' => st('Community Support'),
+	      'body' => '504',
+	      'type' => 'post',
+	      'promote' => '0',
+	      'tags' => array('Community', 'Support'),
+	    ),
+	    '505' => array(
+	      'title' => st('The Dashboard'),
+	      'body' => '505',
+	      'type' => 'post',
+	      'promote' => '1',
+	      'tags' => array('Tools', 'Support'),
+	    ),
+	    '506' => array(
+	      'title' => st('Why Used Backdrop (The Video)'),
+	      'body' => '506',
+	      'type' => 'post',
+	      'promote' => '0',
+	      'tags' => array(''),
+	    ),
+	    '600' => array(
+	      'title' => st('Site Details'),
+	      'body' => '600',
+	      'type' => 'page',
+	      'promote' => '0',
+	      'tags' => array(''),
+	    ),
+	    '601' => array(
+	      'title' => st("What's Next"),
+	      'body' => '601',
+	      'type' => 'page',
+	      'promote' => '0',
+	      'tags' => array(''),
 	    ),
 	  );
 
+		// Setting some values we'll be using a little later. 
+		// 'created' is to help adjust creation time on nodes, to make the sample content 
+    // behave more realistic than if it is all created at the same moment. 
+		// I just do some math to change the created time of each node we create.
 	  $module_path = backdrop_get_path('module', 'user_manual');
 	  $weight = -10;
 	  $created = time() - '1036800';
 
-	  foreach (array_unique(array_column($pages, 'tags')) as $tag) {
-	  	if ($tag != '') {
-		    $term = entity_create('taxonomy_term', array(
-		      'name' => $tag,
-		      'vocabulary' => 'tags',
-		    ));
-		    taxonomy_term_save($term);
+	  // Creates an array of all new taxonony terms
+	  $new_terms = array();
+	  foreach ($pages as $page) {
+	  	$page = $page['tags'];
+	  	foreach ($page as $tag) {
+	  		if (!in_array($tag, $new_terms)) {
+			  	array_push($new_terms, $tag);
+	  		}
 	  	}
 	  }
 
-	  // Create book page for User Manual
+	  // Adds all new terms to 'tags' vocabulary
+	  foreach ($new_terms as $new_term) {
+	  	$term = entity_create('taxonomy_term', array(
+			  'name' => $new_term,
+			  'description' => '',
+			  'format' => 1,
+			  'vocabulary' => 'tags',
+			));
+			taxonomy_term_save($term);
+	  }
+
+	  // Create new nodes
 	  foreach ($pages as $info) {
 	  	$content = file_get_contents($module_path . '/content/' . $info['body'] . '.txt');
 	    $page = new Node(
@@ -89,21 +244,21 @@
 	      )
 	    );
 
-
-	    dpm($info['tags']);
-	    $classes = taxonomy_term_load_multiple_by_name($info['tags'], 'tags');
-	    dpm($classes);
-    	$class = array_shift($classes);
-    	dpm($page);
-			$page->field_tags['und'][0][tid] = $class->tid;
-
+	    // Find tid for each new term and add term to node
+	    $term_key = '0';
+	    foreach ($info['tags'] as $page_tag) {
+	    	$temp_tag = taxonomy_term_load_multiple_by_name($page_tag, 'tags');
+	    	$term_tid = array_keys($temp_tag);
+				$page->field_tags['und'][$term_key++]['tid'] = $term_tid[0];
+	    }
 	    $page->save();
 
+	    // Help make an arbitrary adjustment to node creation date
 	    $created = $created - '1003121';
 
 			// Create a menu item for User Manual
 	    if ($page->title == 'User Manual') {
-	    	  // Set the bid for our User Manual
+	    	  // Get book NID for use to set BID on each page of book
 	    		$user_manual_nid = $page->nid;
 	    		$item = array(
 				  'link_title' => st('User Manual'),
@@ -113,17 +268,58 @@
 				);
 				menu_link_save($item);
 	    }
-	    // Add bid to each book page
+
+		  // Create some additional menu items
+		  $item = array(
+		    'link_path' => 'node/' . $page->nid,
+		    'link_title' => 'About',
+		    'weight' => 1,
+		  );
+		  menu_link_save($item);
+
+	    // Update the menu router information.
+			menu_rebuild();
+
+	    // Add book module specific settings
 	    if ($info['type'] == 'book') {
+	    	
+	    	// Need to set the BID (book id) which is same as NID and save to trigger creation of 
+	    	// other required default values necessary to proceed.
 		    $page = node_load($page->nid);
-		    $page->book['weight'] = $weight++;
 		    $page->book['bid'] = $user_manual_nid;
 		    node_save($page);
+
+				// section_plid and plid_counter used to help parent items
+	    	if ($page->title == 'User Manual') {
+	    		$book_id = $page->book['mlid'];
+	    		$section_plid = $plid_counter = $book_id;
+	    	}
+
+				$page->book['weight'] = $weight++;
+				$page->book['has_children'] = $info['has_children'];
+				$page->book['depth'] = $info['depth'];
+		    $page->book['p1'] = $book_id;
+
+
+		    // Setting parent items depending upon depth
+		    if ($page->book['depth'] == '1') {
+		    	$page->book['plid'] = '0';
+		    }
+		    if ($page->book['depth'] == '2') {
+		    	$page->book['plid'] = $book_id;
+		    	$section_plid = $plid_counter;
+		    	$page->book['p2'] = $section_plid;
+		    }
+		    if ($page->book['depth'] == '3') {
+		    	$page->book['plid'] = $section_plid;
+		    	$page->book['p2'] = $section_plid;
+		    	$page->book['p3'] = $plid_counter;
+		    }
+
+		    node_save($page);
+		    $plid_counter++;
 	    }
 	  }
-
-		// Update the menu router information.
-		menu_rebuild();
 
 		$format = filter_format_load('filtered_html');
 		$format->filters['video_filter'] = (object) $FILTER_ARRAY;
@@ -134,23 +330,19 @@
 		config_set('filter.format.filtered_html', 'filters.filter_html.settings.allowed_html', '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h3> <h4> <h5> <p> <img> <figure> <figcaption> <table> <thead> <tbody> <tr> <th> <td>');
 		config_set('filter.format.filtered_html', 'filters.filter_html.weight', '-3');
 		config_set('filter.format.filtered_html', 'filters.video_filter.weight', '-2');
-
 		config_set('filter.format.filtered_html', 'filters.filter_url.weight', '-1');
 
 
 		// // Set view permission for all content types
 	  $node_types = node_type_get_types();
 	  foreach ($node_types as $node_type) {
-
 	  	$node_type = $node_type->type;
-
 	  	$temp_permission = st('view any ') . $node_type . st(' content');
 	  	$description = st('Use tags to group posts on similar topics into categories.');
 		  $authenticated_permissions = array(
 		    $temp_permission,
 		  );
 		  user_role_grant_permissions('authenticated', $authenticated_permissions);
-
 		  if ($node_type != 'book') {
 		  	$anonymous_permissions = array(
 		  		$temp_permission,
@@ -162,6 +354,8 @@
 		 // Rebuild permissions
   	node_access_rebuild();
 
+
+		// Changing the text in the default page provided by standard install profile
   	$nodes = node_load_multiple(NULL, array("title" => "About"));
 		$node = current($nodes);
 		$content = file_get_contents($module_path . '/content/about.txt');
@@ -169,6 +363,7 @@
 		$node->created = time() - '2150000';
 		node_save($node);
 
+		// Changing the text in the default post provided by standard install profile
   	$nodes = node_load_multiple(NULL, array("title" => "Your first post!"));
 		$node = current($nodes);
 		$content = file_get_contents($module_path . '/content/post.txt');
@@ -176,6 +371,8 @@
 		$node->created = time() - '2600000';
 		node_save($node);
 
+
+		// Prepping new image to use in hero block of front page.
 		$field_image_dir = 'public://hero';
   	file_prepare_directory($field_image_dir, FILE_CREATE_DIRECTORY);
   	$image_url = BACKDROP_ROOT . '/' . $module_path . '/images/mountain-shadows.jpg';
@@ -186,19 +383,18 @@
       'uri' => $moved_file,
       'uid' => 1,
     ));
-
     $file->save();
 
 
-
-    // config_set('layout.layout.home', 'content.5b00c15f-41e3-4454-a35a-9049b93a468d.plugin', 'mini_layouts:footer');
-
+    // We added a profile field to user accounts
+    // This adds some default content to user #1 profile page
     $user_account = user_load('1');
     $content = file_get_contents($module_path . '/content/user.txt');
     $user_account->field_profile[LANGUAGE_NONE][0]['value'] = $content;
     $user_account->field_profile[LANGUAGE_NONE][0]['format'] = 'filtered_html';
     user_save($user_account);
 
+    // Adding mini-block that we use for footer
     $uuid1 = '57deb90a-f136-49af-af00-c5e14ec6b8c5';
 	  $block1 = array(
 	    'content.' . $uuid1 => array(
@@ -226,207 +422,21 @@
 	    ),
 	  );
 
-
-    // array (
-    //   'plugin' => 'views:tags-block',
-    //   'data' => 
-    //   array (
-    //     'status' => 1,
-    //     'module' => 'views',
-    //     'delta' => 'tags-block',
-    //     'settings' => 
-    //     array (
-    //       'link_to_view' => 0,
-    //       'more_link' => false,
-    //       'use_pager' => false,
-    //       'pager_id' => 0,
-    //       'items_per_page' => 10,
-    //       'offset' => 0,
-    //       'path' => NULL,
-    //       'fields_override' => NULL,
-    //       'title_display' => 'default',
-    //       'title' => '',
-    //       'style' => 'default',
-    //       'block_settings' => 
-    //       array (
-    //       ),
-    //       'contexts' => 
-    //       array (
-    //       ),
-    //       'allowed' => 
-    //       array (
-    //       ),
-    //       'path_override' => false,
-    //       'exposed' => 
-    //       array (
-    //       ),
-    //       'admin_label' => '',
-    //       'admin_description' => '',
-    //     ),
-    //     'uuid' => '961a652e-9330-4581-b721-3304e940d92f',
-    //     'style' => 
-    //     array (
-    //       'plugin' => 'default',
-    //       'data' => 
-    //       array (
-    //         'settings' => 
-    //         array (
-    //           'classes' => '',
-    //         ),
-    //       ),
-    //     ),
-    //     'conditions' => 
-    //     array (
-    //       0 => 
-    //       array (
-    //         'plugin' => 'path',
-    //         'data' => 
-    //         array (
-    //           'settings' => 
-    //           array (
-    //             'visibility_setting' => '1',
-    //             'paths' => 'news
-				// 						tags/*
-				// 							posts/*',
-    //             'load_condition_nojs' => 'Load condition',
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   ),
-    // )
-
-
-   //  $uuid2 = 'c810ba75-3518-47b8-8b00-b6c06838c7be';
-	  // $block2 = array(
-	  //   'content.' . $uuid2 => array(
-   //      'plugin' => 'views:tags-block',
-   //      'data' => array(
-   //        'status' => 1,
-   //        'module' => 'views',
-   //        'delta' => 'tags-block',
-   //        'settings' => array(
-   //          'link_to_view' => 0,
-   //          'more_link' => false,
-   //          'use_pager' => false,
-   //          'pager_id' => 0,
-   //          'items_per_page' => 10,
-   //          'offset' => 0,
-   //          'path' => null,
-   //          'fields_override' => null,
-   //          'title_display' => 'default',
-   //          'title' => '',
-   //          'style' => 'default',
-   //          'block_settings' => [],
-   //          'contexts' => [],
-   //          'allowed' => [],
-   //          'path_override' => false,
-   //          'exposed' => [],
-   //          'admin_label' => '',
-   //          'admin_description' => '',
-   //        ),
-   //        'uuid' => $uuid2,
-   //        'style' => array(
-   //          'plugin' => 'default',
-   //          'data' => array(
-   //          	'settings' => array(
-   //              'classes' => '',
-   //            ),
-   //          ),
-   //        ),
-   //        'conditions' => array(
-   //        	'0' => array(
-	  //           'plugin' => 'path',
-	  //           'data' => array(
-	  //             'settings' => array(
-	  //               'visibility_setting' => '1',
-	  //               'paths' => 'news\r\nposts/*\r\ntags/*',
-	  //               'load_condition_nojs' => 'Load condition',
-	  //             ),
-	  //           ),
-	  //         ),
-   //        ),
-   //      ),
-   //    ),
-   //  );
-
+	  // Adds block to layouts
 	  config_set_multiple('layout.layout.home', $block1 );
 	  config_set_multiple('layout.layout.default', $block1 );
 	  config_set_multiple('layout.layout.user_manual', $block1 );
-	  config_set('layout.layout.home','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', '57deb90a-f136-49af-af00-c5e14ec6b8c5'));
-    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.image_path', '/files/hero/mountain-shadows.jpg');
-    config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.title', 'Getting Started with Backdrop');
 
-	  config_set('layout.layout.default','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', '57deb90a-f136-49af-af00-c5e14ec6b8c5'));
-	  config_set('layout.layout.user_manual','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', '57deb90a-f136-49af-af00-c5e14ec6b8c5'));
+	  // Puts block into footer of each layout
+	  config_set('layout.layout.home','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', $uuid1 ));
+	  config_set('layout.layout.default','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', $uuid1 ));
+	  config_set('layout.layout.user_manual','positions.footer', array('d6903155-4ad7-46d3-9300-e628fd337f06', $uuid1 ));
 
-	  // $created = time() - 1036800;
+	  // Changing image and title in hero block on front page
+	  config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.image_path', '/files/hero/mountain-shadows.jpg');
+	  config_set('layout.layout.home', 'content.094cbc03-d088-4b3c-8361-977733540ae8.data.settings.title', 'Getting Started with Backdrop');
 
-	  // $node = node_load('1');
-	  // $node->created = '1586334386';
-	  // $node->changed = '1586334386';
-	  // field_attach_update('node', $node);
-
-	  // $node->title = 'First Post Proppy';
-	  // field_attach_update('node', $node);
-
-	  // $node = node_load('2');
-	  // $node->created = 1586334386;
-	  // $node->changed = 1586334386;
-	  // field_attach_update('node', $node);
-
-
+	  backdrop_set_message('The User Guide module has installed some content on your site and enabled some contributed modules to help you better evaluate and test Backdrop CMS. You will need to manually delete any content that you do not wish to keep.', 'info');
 
 	}
-
-
-        // "961a652e-9330-4581-b721-3304e940d92f": {
-        //     "plugin": "views:tags-block",
-        //     "data": {
-        //         "status": 1,
-        //         "module": "views",
-        //         "delta": "tags-block",
-        //         "settings": {
-        //             "link_to_view": 0,
-        //             "more_link": false,
-        //             "use_pager": false,
-        //             "pager_id": 0,
-        //             "items_per_page": 10,
-        //             "offset": 0,
-        //             "path": null,
-        //             "fields_override": null,
-        //             "title_display": "default",
-        //             "title": "",
-        //             "style": "default",
-        //             "block_settings": [],
-        //             "contexts": [],
-        //             "allowed": [],
-        //             "path_override": false,
-        //             "exposed": [],
-        //             "admin_label": "",
-        //             "admin_description": ""
-        //         },
-        //         "uuid": "961a652e-9330-4581-b721-3304e940d92f",
-        //         "style": {
-        //             "plugin": "default",
-        //             "data": {
-        //                 "settings": {
-        //                     "classes": ""
-        //                 }
-        //             }
-        //         },
-        //         "conditions": [
-        //             {
-        //                 "plugin": "path",
-        //                 "data": {
-        //                     "settings": {
-        //                         "visibility_setting": "1",
-        //                         "paths": "news\r\ntags/*\r\nposts/*",
-        //                         "load_condition_nojs": "Load condition"
-        //                     }
-        //                 }
-        //             }
-        //         ]
-        //     }
-        // },
 

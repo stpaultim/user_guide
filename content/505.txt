@@ -1,0 +1,3 @@
+<p>The administrative dashboard in Backdrop CMS is a great place to get started.</p>
+
+<p><img alt="" src="https://backdropcms.org/files/images/news/dashboard.png" /></p>

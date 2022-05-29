@@ -1,5 +1,12 @@
 <p>This user manual is only visible to authenticated users on your site or users that are logged in.</p>
 
-<p>We've included this user manual to help you get started on your new Backdrop CMS site. You can also edit this manual to include custom information that your site managers might appreciate in the future, or things that you would like to remember about how you built your site.&nbsp;</p>
+<p>There are three sections to the User Manual</p>
+
+<ol>
+	<li>Guide to this site - Customize this and add your own content</li>
+	<li>Backdrop CMS - Some content pulled from the user guide available at docs.backdropcms.org to help you get started.</li>
+	<li>Glossary</li>
+</ol>
 
 <p>The user manual is built with the Book module. The Book module is included in Backdrop core, but is turned off by default. We've automatically enabled it for this manual. If you decide you don't need your user manual anymore, you may disable the book module and delete all the content.</p>
+

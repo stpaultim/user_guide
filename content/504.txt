@@ -1,0 +1,7 @@
+<p>If you are new to Backdrop, here are some great places to find support.&nbsp;</p>
+
+<ul>
+	<li>Our <a href="https://backdrop.zulipchat.com/">Zulip chat channel</a>, beginners are welcome and encourage to ask questions.&nbsp;</li>
+	<li>The <a href="https://forum.backdropcms.org/">Backdrop CMS Forum</a>&nbsp;- we love to see folks ask questions in the forum, where answers are archived and available for other people in the future.</li>
+	<li><a href="https://github.com/backdrop/backdrop-issues/issues">Github core issue queue</a> - if you find a bug in Backdrop and are comfortable using Github, this is a great place to report an issue or see what is happening in core development.&nbsp;</li>
+</ul>

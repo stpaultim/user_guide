@@ -1,5 +1,0 @@
-<p>The layout system is a powerful and important tool that you will need to understand to get the most out of Backdrop CMS. If you are coming from Drupal, it may take some time to wrap your head around the role of layouts in Backdrop vs your experiences in Drupal 7 and earlier. Once you understand them, you will likely appreciate their power and flexibility.&nbsp;</p>
-
-<p>This 30 minute video is a great place to get started and worth your time.&nbsp;&nbsp;</p>
-
-<p>[video: https://www.youtube.com/watch?v=0ZNYnZZdVFY]</p>

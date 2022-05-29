@@ -10,31 +10,4 @@
 
 <p><strong>Terms&nbsp;</strong>- The most basic unit of content in the taxonomy system. Individual <em>terms</em> are part of a larger vocabulary that one uses to group and classify their content. If a <em>vocabulary</em> is 'colors', then individual <em>terms</em> would be 'red,' 'yellow,' or 'blue.' If a <em>vocabulary</em> is regions, the individual <em>terms</em> might be 'New England,' 'Midwest,' or 'Pacific Northwest.'</p>
 
-<table border="1" cellpadding="1" cellspacing="1" width="500">
-	<thead>
-		<tr>
-			<th scope="col"><strong>Vocabulary</strong></th>
-			<th scope="col"><strong>Terms</strong></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Color</td>
-			<td>Red, Blue, Green, Yellow</td>
-		</tr>
-		<tr>
-			<td>Venue</td>
-			<td>1st Avenue, Elks Club on Broadway, Metrodome</td>
-		</tr>
-		<tr>
-			<td>Event Type</td>
-			<td>class, seminar, online, concert, social</td>
-		</tr>
-		<tr>
-			<td>Membership</td>
-			<td>trial, monthly, annual, lifetime</td>
-		</tr>
-	</tbody>
-</table>
-
 <p><strong>Display modes</strong>&nbsp;are variations of how an item can be displayed. Each Page display mode can be configured differently. For example: individual fields can be displayed using a different format, or hidden entirely.</p>

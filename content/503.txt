@@ -1,0 +1,5 @@
+<p><a href="https://events.backdropcms.org/">Backdrop LIVE</a> is an online global event for people who use Backdrop CMS, or want to learn more about it.</p>
+
+<p>Backdrop LIVE is a dynamic and interactive event, designed to facilitate the sharing of information and lessons learned, as well as an opportunity to build the Backdrop community and plan for the future.</p>
+
+<p>The goal of this event is for everyone to participate conversations. The discussions are not recorded. Facilitators for each discussion are asked to lead the conversation, but slides and presentations are discouraged.</p>
