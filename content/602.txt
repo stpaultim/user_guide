@@ -1,0 +1,16 @@
+<p>Here are a few more features that you can add to your site as recipe modules. You can find and install recipes in the project installer (<em>/admin/modules/install</em> the same way to install any other modules).&nbsp;</p>
+
+<ul>
+	<li><a href="https://backdropcms.org/project/faq_recipe">FAQ Recipe</a></li>
+	<li><a href="https://backdropcms.org/project/testimonial_recipe">Testimonial Recipe</a></li>
+</ul>
+
+<p>This module will add some additional sample content to your site, but no real features.&nbsp;</p>
+
+<ul>
+	<li><a href="https://backdropcms.org/project/sample_animal_content">Sample Animal Content</a></li>
+</ul>
+
+<p><strong>NOTE: If you install a recipe, the only way to remove the content, content types, views, and fields that they create on your site is to manually delete them.</strong>&nbsp;</p>
+
+<p>&nbsp;</p>

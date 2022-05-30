@@ -1,7 +1,26 @@
 <?php
 
 	function user_manual_install() {
-		
+
+		// Checking to see if "About" node still exists
+		$query = new EntityFieldQuery();
+	 	$entities = $query->entityCondition('entity_type', 'node')
+	  	->propertyCondition('type', 'page')
+	  	->propertyCondition('title', 'About')
+	  	->propertyCondition('status', 1)
+	  	->range(0,1)
+	  	->execute();
+
+	  if (!empty($entities['node'])) {
+	    $about = node_load(array_shift(array_keys($entities['node'])));
+	  }
+	  // If About page exists, unpublish it.
+		if (!empty($about)) {
+			$page = node_load($about->nid);
+		  $page->status = '0';
+		  node_save($page);
+		}
+
 		$pages = array(
 	    '001' => array(
 	      'title' => st('User Manual'),
@@ -176,18 +195,27 @@
 	      'tags' => array(''),
 	    ),
 	    '600' => array(
-	      'title' => st('Site Details'),
+	      'title' => st('About'),
 	      'body' => '600',
 	      'type' => 'page',
 	      'promote' => '0',
 	      'tags' => array(''),
 	    ),
 	    '601' => array(
-	      'title' => st("What's Next"),
+	      'title' => st('Site Details'),
 	      'body' => '601',
 	      'type' => 'page',
 	      'promote' => '0',
 	      'tags' => array(''),
+	      'menu_parent' => 'about',
+	    ),
+	    '602' => array(
+	      'title' => st("What's Next"),
+	      'body' => '602',
+	      'type' => 'page',
+	      'promote' => '0',
+	      'tags' => array(''),
+	      'menu_parent' => 'about',
 	    ),
 	  );
 
@@ -269,13 +297,35 @@
 				menu_link_save($item);
 	    }
 
-		  // Create some additional menu items
-		  $item = array(
-		    'link_path' => 'node/' . $page->nid,
-		    'link_title' => 'About',
-		    'weight' => 1,
-		  );
-		  menu_link_save($item);
+			// Create an "About" link in the main menu.
+	    if ($page->title == 'About') {
+			  $item = array(
+			    'link_path' => 'node/' . $page->nid,
+			    'link_title' => 'About',
+			    'weight' => 1,
+			  );
+			  menu_link_save($item);
+			  $about_mlid = $item['mlid'];
+			  // While here, fix the about alias
+			  $about = node_load($page->nid);
+			  dpm($about);
+			  $about->path['auto'] = FALSE;
+			  $about->path['alias'] = 'new-about';
+			  $about->save();
+			  dpm($about);
+			}
+
+			// Create menu items for children of About
+	    if ($info['menu_parent'] == 'about') {
+			  $item = array(
+			    'link_path' => 'node/' . $page->nid,
+			    'link_title' => $page->title,
+			    'weight' => 2,
+			    'plid' => $about_mlid,
+			  );
+			  menu_link_save($item);
+			  dpm($item);
+			}
 
 	    // Update the menu router information.
 			menu_rebuild();
@@ -321,6 +371,8 @@
 	    }
 	  }
 
+	  // END new nodes section
+
 		$format = filter_format_load('filtered_html');
 		$format->filters['video_filter'] = (object) $FILTER_ARRAY;
 		filter_format_save($format);
@@ -353,15 +405,6 @@
 
 		 // Rebuild permissions
   	node_access_rebuild();
-
-
-		// Changing the text in the default page provided by standard install profile
-  	$nodes = node_load_multiple(NULL, array("title" => "About"));
-		$node = current($nodes);
-		$content = file_get_contents($module_path . '/content/about.txt');
-		$node->body[LANGUAGE_NONE][0]['value'] = $content;
-		$node->created = time() - '2150000';
-		node_save($node);
 
 		// Changing the text in the default post provided by standard install profile
   	$nodes = node_load_multiple(NULL, array("title" => "Your first post!"));
