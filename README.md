@@ -1,5 +1,12 @@
-User Manual
-======================
+# User Manual
+
+## Instructions
+
+The content of this module is currently in development, but you are free to download, install, and offer feedback. 
+
+Enabling this module on a site will also require downloading and installing a couple of other modules. It would be best to experiment with this module on a test or sandbox environment as it will add a bunch of content and some content types, fields and views that can only be removed manually.
+
+## Details
 
 The Getting Started module was created to help site owners and site architects that are relatively new to Backdrop get a jump start on understanding the power of Backdrop and what it can do. 
 
