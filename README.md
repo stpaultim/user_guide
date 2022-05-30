@@ -5,7 +5,7 @@ The Getting Started module was created to help site owners and site architects t
 
 We've enabled and added some features to this site that will help you get started and learn more about how Backdrop CMS works. 
 
-Specifically, here is a list of the changes that this module has made to your site:
+Specifically, here is a list of the changes that this module makes to your site:
 
 - We create a new "About" page, place it in the main menu along with a few sub-menu items. If you already had an About page, we unpublished it. You can still find the old version, if there was one, in the list of content for the site - /admin/content.
 - We generate over 20 pieces of content (nodes). The content generated is intended to help you better envision how Backdrop CMS can be used to build a website and to explain some of the features, while linking you to additional resources where you can learn more.
