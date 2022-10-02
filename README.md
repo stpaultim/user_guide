@@ -1,5 +1,7 @@
 # User Manual
 
+NOTE: This module has been renamed and move to https://backdropcms.org/project/user_guide_recipe
+
 ## Instructions
 
 The content of this module is currently in development, but you are free to download, install, and offer feedback. 
